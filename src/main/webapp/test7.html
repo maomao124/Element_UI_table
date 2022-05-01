@@ -19,6 +19,10 @@ Project name(项目名称)：Element_UI_table
     <script src="js/vue.js"></script>
     <script src="js/element-ui.js"></script>
     <style>
+        .el-table, .el-button {
+            font-size: 18px;
+        }
+
         .el-table .warning-row {
             background: oldlace;
         }
@@ -32,7 +36,8 @@ Project name(项目名称)：Element_UI_table
 
 <div id="app">
 
-    <el-table :data="tableData" style="width:1920px;" max-height="800px" :border="true" :cell-class-name="tableClassName">
+    <el-table :data="tableData" style="width:1920px;" max-height="800px" :border="true"
+              :cell-class-name="tableClassName">
         <el-table-column min-width="200px" fixed prop="no" label="学号"></el-table-column>
         <el-table-column min-width="200px" prop="name" label="姓名"></el-table-column>
         <el-table-column min-width="200px" prop="sex" label="性别"></el-table-column>

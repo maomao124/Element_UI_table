@@ -22,7 +22,7 @@
 
 
 <div class="link_p">
-    <%int n = 5;%>
+    <%int n = 7;%>
     <%
         for (int i = 0; i < n; i++)
         {
