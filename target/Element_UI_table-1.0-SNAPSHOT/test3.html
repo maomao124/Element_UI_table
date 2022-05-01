@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<!--
+Project name(项目名称)：Element_UI_table
+  File name(文件名): test3
+  Authors(作者）: mao
+  Author QQ：1296193245
+  GitHub：https://github.com/maomao124/
+  Date(创建日期)： 2022/5/1
+  Time(创建时间)： 13:28
+  Description(描述)： 无
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/element-ui.css">
+    <script src="js/vue.js"></script>
+    <script src="js/element-ui.js"></script>
+</head>
+<body>
+
+<div id="app">
+
+    <el-table :data="tableData" :border="true" :stripe="true">
+        <el-table-column prop="no" label="学号"></el-table-column>
+        <el-table-column prop="name" label="姓名"></el-table-column>
+        <el-table-column prop="sex" label="性别"></el-table-column>
+        <el-table-column prop="age" label="年龄"></el-table-column>
+    </el-table>
+
+
+</div>
+
+<script>
+    var app = new Vue
+    (
+        {
+            el: "#app",
+            data:
+                {
+                    tableData:
+                        [
+                            {
+                                no: 100,
+                                name: "张三",
+                                sex: "男",
+                                age: 19,
+                            }
+                        ],
+
+                },
+            methods: {
+                init: function ()
+                {
+                    for (let i = 101; i < 1000; i++)
+                    {
+                        this.tableData.push
+                        (
+                            {
+                                no: i,
+                                name: `测试${i}`,
+                                sex: Math.random() > 0.5 ? "男" : "女",
+                                age: parseInt(Math.random() * 10 + 10),
+                            }
+                        )
+                    }
+                }
+            },
+            mounted()
+            {
+                this.init();
+            }
+        }
+    )
+</script>
+</body>
+</html>
